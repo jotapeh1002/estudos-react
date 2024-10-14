@@ -1,23 +1,19 @@
-import './Navbar.css'
+import './Navbar.module.css'
+import logoMarques from '../../assets/marques.png'
 
 export function Navbar() {
-
-    function alertTest(){
-        alert('esse um teste')
-    }
-
+    
     return (
-        <div className="mx-5 pt-8 flex justify-between">
-                <button onClick={alertTest} className="material-symbols-outlined text-2xl border border-neutral-500
-                rounded-md p-1 px-2 shadow-sm text-neutral-500 bg-zinc-200 bg-opacity-50">settings</button>
-                <div className="text-4xl">
-                    <span className="text-gray-600">LE</span>
-                    <span className="text-green-600">TR</span>
-                    <span className="text-yellow-600">IX</span>
-                    <span className="text-gray-600">.IO</span>
+        <div className=''>
+            <nav class="flex items-center justify-between px-1 py-2 shadow-lg bg-gray-700 w-full">
+                <img src={logoMarques} alt="" width="150px" />
+                <div class="flex-col flex items-center">
+                    <input type="text" className="text-gray-600 outline-none rounded-full h-8 w-60 bg-opacity-30 mx-3 px-4"
+                        placeholder="Pesquise sua cidade..." name="search" id="search" />
+                    <div className="relative flex w-full justify-center mt-1 " />
+                    <div id="suggestions" className="suggestions w-60 rounded-b-lg hidden"></div>
                 </div>
-                <button onClick={alertTest} className="material-symbols-outlined text-2xl border border-neutral-500
-                rounded-md p-1 px-2 shadow-sm text-neutral-500 bg-zinc-200 bg-opacity-50">question_mark</button>
-            </div>
+            </nav>
+        </div>
     )
 }
